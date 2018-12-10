@@ -2,7 +2,7 @@
 
 namespace Unity\Component\Router;
 
-use Unity\Contracts\IRouter\IRouter;
+use Unity\Component\Router\Contracts\IRouter;
 use Psr\Http\Message\RequestInterface;
 
 class Router implements IRouter
@@ -12,11 +12,6 @@ class Router implements IRouter
     public function __construct(RequestInterface $request)
     {
         $this->request = $request;
-    }
-
-    public function getParams()
-    {
-        //
     }
 
     public function intercept()
