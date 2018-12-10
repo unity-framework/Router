@@ -1,0 +1,22 @@
+{
+    "name": "unity/router",
+    "description": "Unity router package",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Eleandro Duzentos",
+            "email": "eleandro@inbox.ru"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "zendframework/zend-diactoros": "^2.0@dev",
+        "unity/container": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Unity\\Component\\Router\\": "src"
+        }
+    }
+}
