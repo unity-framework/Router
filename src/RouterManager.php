@@ -2,7 +2,8 @@
 
 namespace Unity\Component\Router;
 
-class RouterManager {
+class RouterManager
+{
     /** @var string */
     protected $controllersPath = '';
 
