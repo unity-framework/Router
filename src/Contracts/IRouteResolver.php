@@ -1,6 +1,6 @@
 <?php
 
-namespace Unity\Contracts\IRouteResolver;
+namespace Unity\Component\Router\Contracts;
 
 interface IRouteResolver
 {

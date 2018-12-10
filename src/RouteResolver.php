@@ -1,6 +1,6 @@
 <?php
 
-namespace Unity\Contracts\IRouteResolver;
+namespace Unity\Component\Router;
 
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -8,7 +8,7 @@ use Psr\Http\Message\ResponseInterface;
 class RouteResolver implements IRouteResolver
 {
     /** @var ResponseInterface */
-    public $response;
+    protected $response;
 
     public function __construct(ResponseInterface $response)
     {
