@@ -7,17 +7,9 @@ use Unity\Component\Router\Contracts\IRouteGroup;
 
 class Route implements IRoute
 {
-    protected $method;
     protected $name;
-    protected $uri;
-
-    /** @var IRouterCollection */
-    protected $routeCollection;
-
-    public function __construct(IRouteCollection $routeCollection)
-    {
-        $this->$routeCollection = $routeCollection;
-    }
+    protected $uriTemplate;
+    protected $callback;
 
     /**
      * @inject
