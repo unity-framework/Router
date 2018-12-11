@@ -4,12 +4,12 @@ namespace Unity\Component\Router;
 
 use Zend\Diactoros\Response;
 use Unity\Component\Router\Router;
-use Unity\Component\Router\Contracts\IRouteCollection;
+use Unity\Component\Router\Contracts\IRoutesCollection;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Zend\Diactoros\ServerRequestFactory;
 use Unity\Component\Router\RouteResolver;
-use Unity\Component\Router\RouteCollection;
+use Unity\Component\Router\RoutesCollection;
 use Unity\Component\Container\Contracts\IContainer;
 use Unity\Component\Container\Contracts\IServiceProvider;
 
@@ -30,7 +30,7 @@ class RouterServiceProvider implements IServiceProvider
         });
 
         $container->set('response', Response::class);
-        $container->set('routerCollection', RouteCollection::class);
+        $container->set('routerCollection', RoutesCollection::class);
 
         $container->set('routeResolver', RouteResolver::class)
             ->bind(ResponseInterface::class, function() {
@@ -41,8 +41,8 @@ class RouterServiceProvider implements IServiceProvider
             ->bind(RequestInterface::class, function($container) {
                 return $container->make('request');
             })
-            ->bind(IRouteCollection::class, function($container) {
-                return $container->get('routeCollection');
+            ->bind(IRoutesCollection::class, function($container) {
+                return $container->get('RoutesCollection');
             });
     }
 }
